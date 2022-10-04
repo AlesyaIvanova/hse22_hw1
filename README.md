@@ -60,8 +60,8 @@ time platanus assemble -o Poil -f sub1.fastq.trimmed sub2.fastq.trimmed 2> assem
 ```
 
 - Проанализировала полученные контиги
-Ссылка на Google Colab: 
-Блокнот:
+-- Ссылка на Google Colab: 
+-- Блокнот:
 
 - С помощью программы “platanus scaffold” собрала скаффолды из контигов, а также из подрезанных чтений.
 ```
