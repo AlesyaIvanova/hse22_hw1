@@ -94,7 +94,7 @@ mv fast* main_task/
 mv mult* main_task/
 ```
 
-В папке main_task создала папку platanus и перенесла туда файлы, созданные программой platanus.
+- В папке main_task создала папку platanus и перенесла туда файлы, созданные программой platanus.
 
 ```
 mkdir platanus
