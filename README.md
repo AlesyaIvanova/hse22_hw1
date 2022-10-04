@@ -54,12 +54,12 @@ multiqc -o multqctrim fastqc_trim
 ```
 
 ### Контиги, скаффолды
--С помощью программы “platanus assemble” собрала контиги из подрезанных чтений.
+- С помощью программы “platanus assemble” собрала контиги из подрезанных чтений.
 ```
 time platanus assemble -o Poil -f sub1.fastq.trimmed sub2.fastq.trimmed 2> assemble.log
 ```
 
--Проанализировала полученные контиги
+- Проанализировала полученные контиги
 Ссылка на Google Colab: 
 Блокнот:
 
