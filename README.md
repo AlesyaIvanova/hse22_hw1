@@ -31,6 +31,9 @@ mkdir multiqc
 multiqc -o multiqc fastqc
 ```
 
+![Скрин1](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture1.png)
+![Скрин2](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture2.png)
+
 - С помощью программ platanus_trim и platanus_internal_trim подрезала чтение по качеству и удалила адаптеры.
 ```
 platanus_trim sub*
@@ -52,6 +55,9 @@ ls sub* matepairs*| xargs -tI{} fastqc -o fastqc_trim {}
 mkdir multqctrim
 multiqc -o multqctrim fastqc_trim
 ```
+
+![Скрин3](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture3.png)
+![Скрин4](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture4.png)
 
 ### Контиги, скаффолды
 - С помощью программы “platanus assemble” собрала контиги из подрезанных чтений.
