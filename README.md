@@ -108,3 +108,92 @@ mkdir platanus
 mv Poil* platanus/
 mv *.log platanus/
 ```
+
+## Бонусная часть
+### Дополнительная сборка 1: чтений в 2 раза меньше
+
+- Создала папку ExtraTask, в ней Seq1. В папке Seq1 выполнила те же действия, но с изменением кол-ва чтений (для paired-end 2_500_000 чтений, для mate-pairs 750_000 чтений.
+
+```
+seqtk sample -s716 oil_R1.fastq 2500000 > sub1.fastq
+seqtk sample -s716 oil_R2.fastq 2500000 > sub2.fastq
+seqtk sample -s716 oilMP_S4_L001_R1_001.fastq 750000 > matepairs.fastq
+seqtk sample -s716 oilMP_S4_L001_R2_001.fastq 750000 > matepairs2.fastq
+
+mkdir fastqc
+ls sub* matepairs* | xargs -tI{} fastqc -o fastqc {}
+mkdir multiqc
+multiqc -o multiqc fastqc
+
+platanus_trim sub*
+platanus_internal_trim matepair*
+
+rm sub1.fastq
+rm sub2.fastq
+rm matepairs.fastq 
+rm matepairs2.fastq
+
+mkdir fastqc_trim
+ls sub* matepairs*| xargs -tI{} fastqc -o fastqc_trim {}
+mkdir multqctrim
+multiqc -o multqctrim fastqc_trim
+
+time platanus assemble -o Poil -f sub1.fastq.trimmed sub2.fastq.trimmed 2> assemble.log
+
+time platanus scaffold -o Poil -c Poil_contig.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 matepairs.fastq.int_trimmed matepairs2.fastq.int_trimmed 2> scaffold.log
+
+rm matepairs.fastq.int_trimmed
+rm matepairs2.fastq.int_trimmed
+rm sub1.fastq.trimmed
+rm sub2.fastq.trimmed
+```
+
+- Ссылка на Google Colab та же.
+
+ - Статистики:
+
+### Дополнительная сборка 2: чтений в 4 раза меньше
+
+- В папке ExtraTask создала папку Seq2. В папке Seq2 выполнила те же действия, но с изменением кол-ва чтений (для paired-end 1_250_000 чтений, для mate-pairs 375_000 чтений.
+
+```
+seqtk sample -s716 oil_R1.fastq 1250000 > sub1.fastq
+seqtk sample -s716 oil_R2.fastq 1250000 > sub2.fastq
+seqtk sample -s716 oilMP_S4_L001_R1_001.fastq 375000 > matepairs.fastq
+seqtk sample -s716 oilMP_S4_L001_R2_001.fastq 375000 > matepairs2.fastq
+
+mkdir fastqc
+ls sub* matepairs* | xargs -tI{} fastqc -o fastqc {}
+mkdir multiqc
+multiqc -o multiqc fastqc
+
+platanus_trim sub*
+platanus_internal_trim matepair*
+
+rm sub1.fastq
+rm sub2.fastq
+rm matepairs.fastq 
+rm matepairs2.fastq
+
+mkdir fastqc_trim
+ls sub* matepairs*| xargs -tI{} fastqc -o fastqc_trim {}
+mkdir multqctrim
+multiqc -o multqctrim fastqc_trim
+
+time platanus assemble -o Poil -f sub1.fastq.trimmed sub2.fastq.trimmed 2> assemble.log
+
+time platanus scaffold -o Poil -c Poil_contig.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 matepairs.fastq.int_trimmed matepairs2.fastq.int_trimmed 2> scaffold.log
+
+rm matepairs.fastq.int_trimmed
+rm matepairs2.fastq.int_trimmed
+rm sub1.fastq.trimmed
+rm sub2.fastq.trimmed
+```
+
+- Ссылка на Google Colab та же.
+
+ - Статистики:
+    
+    
+ ### Выводы
+ - См. блокнот.
