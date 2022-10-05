@@ -86,17 +86,18 @@ rm sub2.fastq.trimmed
 - Перенесла все в одну папку.
 
 ```
-mkdir main_task
-mv Poil* main_task/
-mv oil* main_task/
-mv *.log main_task/
-mv fast* main_task/
-mv mult* main_task/
+mkdir MainTask
+mv Poil* MainTask/
+mv oil* MainTask/
+mv *.log MainTask/
+mv fast* MainTask/
+mv mult* MainTask/
 ```
 
-- В папке main_task создала папку platanus и перенесла туда файлы, созданные программой platanus.
+- В папке MainTask создала папку platanus и перенесла туда файлы, созданные программой platanus.
 
 ```
+cd MainTask
 mkdir platanus
 mv Poil* platanus/
 mv *.log platanus/
