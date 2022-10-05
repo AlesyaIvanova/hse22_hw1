@@ -157,7 +157,13 @@ rm sub2.fastq.trimmed
 
 - Ссылка на Google Colab та же.
 
- - Статистики:
+- Статистики:
+    + До 
+ ![Скрин5](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture5.png)
+ ![Скрин6](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture6.png)
+    + После
+ ![Скрин7](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture7.png)
+ ![Скрин8](https://github.com/AlesyaIvanova/hse22_hw1/blob/main/picture8.png)
 
 ### Дополнительная сборка 2: чтений в 4 раза меньше
 
