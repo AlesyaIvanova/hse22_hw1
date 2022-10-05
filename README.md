@@ -115,6 +115,11 @@ mv *.log platanus/
 - Создала папку ExtraTask, в ней Seq1. В папке Seq1 выполнила те же действия, но с изменением кол-ва чтений (для paired-end 2_500_000 чтений, для mate-pairs 750_000 чтений.
 
 ```
+ln -s /usr/share/data-minor-bioinf/assembly/oil_R1.fastq
+ln -s /usr/share/data-minor-bioinf/assembly/oil_R2.fastq
+ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R1_001.fastq
+ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R2_001.fastq
+
 seqtk sample -s716 oil_R1.fastq 2500000 > sub1.fastq
 seqtk sample -s716 oil_R2.fastq 2500000 > sub2.fastq
 seqtk sample -s716 oilMP_S4_L001_R1_001.fastq 750000 > matepairs.fastq
@@ -157,6 +162,11 @@ rm sub2.fastq.trimmed
 - В папке ExtraTask создала папку Seq2. В папке Seq2 выполнила те же действия, но с изменением кол-ва чтений (для paired-end 1_250_000 чтений, для mate-pairs 375_000 чтений.
 
 ```
+ln -s /usr/share/data-minor-bioinf/assembly/oil_R1.fastq
+ln -s /usr/share/data-minor-bioinf/assembly/oil_R2.fastq
+ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R1_001.fastq
+ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R2_001.fastq
+
 seqtk sample -s716 oil_R1.fastq 1250000 > sub1.fastq
 seqtk sample -s716 oil_R2.fastq 1250000 > sub2.fastq
 seqtk sample -s716 oilMP_S4_L001_R1_001.fastq 375000 > matepairs.fastq
